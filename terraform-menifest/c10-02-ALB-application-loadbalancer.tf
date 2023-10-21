@@ -54,10 +54,11 @@ module "alb" {
           target_id = module.ec2_private_app1.id[0]
           port      = 80
         },
-        # my_app1_vm2 = {
-        #   target_id = module.ec2_private_app1.id[1]
-        #   port      = 80
+        my_app1_vm2 = {
+          target_id = module.ec2_private_app1.id[1]
+          port      = 80
         # }
+        }
       }
       tags = local.common_tags # Target Group Tags
     },
@@ -86,10 +87,10 @@ module "alb" {
           target_id = module.ec2_private_app2.id[0]
           port      = 80
         },
-        # my_app2_vm2 = {
-        #   target_id = module.ec2_private_app2.id[1]
-        #   port      = 80
-        # }
+        my_app2_vm2 = {
+          target_id = module.ec2_private_app2.id[1]
+          port      = 80
+        }
       }
       tags = local.common_tags
     }
