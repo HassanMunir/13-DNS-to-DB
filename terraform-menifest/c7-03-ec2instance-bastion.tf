@@ -14,6 +14,6 @@ module "ec2_public" {
   # vpc_security_group_ids = [module.public_bastion_sg.this_security_group_id]
   vpc_security_group_ids = [module.public_bastion_sg.security_group_id]
   tags = local.common_tags
-  
+  user_data = file("${path.module}/jumpbox-install.sh")
 }
 
